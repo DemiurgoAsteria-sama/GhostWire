@@ -1,0 +1,18 @@
+[Interface]
+# Server private key
+PrivateKey = gC79aSbCx6toZsMjgOSbTNSZQ+z41wmnY8Duy22C3FY=
+# Server listen port
+ListenPort = 443
+# Server VPN subnet
+Address = 10.10.0.1/24
+# Post up and post down scripts to configure routing and firewall
+PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o enp0s6 -j MASQUERADE
+PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o enp0s6 -j MASQUERADE
+
+# Client configurations will be added below
+
+[Peer]
+# felipe-notebook
+PublicKey = kf2LJ93hF+XwCxwIluurA1x+W5xLvNW7aZa1NDlJGgY=
+AllowedIPs = 10.10.0.4/32
+
