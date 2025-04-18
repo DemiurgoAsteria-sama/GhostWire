@@ -1,5 +1,8 @@
 # 🔒 GhostWire VPN
+<div align="center">
+
 ![20250418-195635](https://github.com/user-attachments/assets/e70aaf7e-2502-437f-9a48-aba8509b231d)
+</div>
 
 <div align="center">
 
